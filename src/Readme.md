@@ -35,8 +35,8 @@ KLasa konto bankowe:
 
 Zadania:
 
-    1. stworzenie interfejsu uzytkownika
-        1. zadaje pytanie o utworzenie uzytkownika
+    1. stworzenie interfejsu uzytkownika - DONE
+        1. zadaje pytanie o utworzenie uzytkownika - IN PROGRESS
             1.podaj nazwe uzytkownika
             2. wyswietlamy odpowiedz czy uzytkownik istnieje
                 1. jezeli uzytkownik istnieje to uzytkownik dostaje informacje ze konto istnieje i wyswietla sie informacja
@@ -68,6 +68,7 @@ Zadania:
     2. wypisanie funkcji programu
         1. utworzenie uzytkownika
         2. utworzenie konta
+        //TODO finish describe functionality  of our program
     3. stworzenie struktury danych
         1. tworzymy klase uzytkownik
         2. tworzymy klase bank
