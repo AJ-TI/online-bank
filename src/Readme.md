@@ -36,13 +36,13 @@ KLasa konto bankowe:
 Zadania:
 
     1. stworzenie interfejsu uzytkownika - DONE
-        1. zadaje pytanie o utworzenie uzytkownika - IN PROGRESS
-            1.podaj nazwe uzytkownika
-            2. wyswietlamy odpowiedz czy uzytkownik istnieje
+        1. zadaje pytanie o utworzenie uzytkownika - DONE
+            1.podaj nazwe uzytkownika DONE
+            2. wyswietlamy odpowiedz czy uzytkownik istnieje DONE
                 1. jezeli uzytkownik istnieje to uzytkownik dostaje informacje ze konto istnieje i wyswietla sie informacja
-                    co dalej chce zrobic i przechodzimy do pkt. 3
-                2. jezeli uzytkonik nie istnieje to zadajemy pytanie czy chce utworzyc konto
-                    1. jezeli chce to tworzymy
+                    co dalej chce zrobic i przechodzimy do pkt. 3 - IN PROGRESS
+                2. jezeli uzytkonik nie istnieje to zadajemy pytanie czy chce utworzyc konto DONE
+                    1. jezeli chce to tworzymy DONEE
                         1. pytamy w jakim banku - do wybory 10 bankow ( lub baza danych )
                         2. czy posiada konto w danym banku
                             1. jesli posiada to przechodzimy do pkt 4
@@ -50,7 +50,7 @@ Zadania:
                                 1. jesli nie chce to pytamy z jakiego banku chce skorzytac
                                 2. jezeli nie wybierze banku to konczymy program
                                 3. jezeli wybierze to przechodzimy pkt. 2
-                    2. jesli nie to koniec programu
+                    2. jesli nie to koniec programu DONE
             3. z jakiego banku chce skorzystac ( z posiadanych przez uzytkownika )
                 1. bank jeden z posiadanych
                 2. mozliwosc otworzenia nowego
