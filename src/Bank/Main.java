@@ -3,10 +3,7 @@ package Bank;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,30 +14,61 @@ public class Main {
         //opcja nr 2: stworzenie struktry danych ktora bedzie przechowywac uzytkownika i powiazane banki
         //opcja nr 3: uzycie kolekcji danych typu Mapa -> TODO
 
+
+
         //todo fix problem and run code
-        ListIterator<String>
-                iterator = user.listIterator();
+        ListIterator<User>
+                iterator = getUsersWithBank().listIterator();
 
         System.out.println("\nActual list:\n");
         while (iterator.hasNext()) {
             System.out.println("Active user : "
                     + iterator.next());
         }
+        Map<Integer, String> mbank = new TreeMap<>();
+        mbank.put(1234, "Adrian");
+        mbank.put(1235, "Bartek");
+        mbank.put(1236, "Kamil");
+
+        Map<Integer, String> pko = new TreeMap<>();
+        pko.put(1234,"Adrian");
+        pko.put(1237,"Tomek");
+
+        Map<Integer, String> nest = new TreeMap<>();
+        nest.put(1234,"Adrian");
+        nest.put(1237, "Tomek");
+
+        Set<Map.Entry<Integer,String>> entrySet = mbank.entrySet();
+        System.out.println("\nAmount of Mbank users: " + mbank.size());
+        for(Map.Entry<Integer, String> entry: entrySet) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+        Set<Map.Entry<Integer,String>> entrySet1 = pko.entrySet();
+        System.out.println("\nAmount of PKO users: " + pko.size());
+        for(Map.Entry<Integer, String> entry: entrySet1) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+        Set<Map.Entry<Integer,String>> entrySet2 = nest.entrySet();
+        System.out.println("\nAmount of Nest users: " + nest.size());
+        for(Map.Entry<Integer, String> entry: entrySet2) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
 
         System.out.println("\nWelcome, please log in: \n");
 
         BufferedReader reader =
                 new BufferedReader(new InputStreamReader(System.in));
-        String login = reader.readLine();
+        String login = reader.readLine().toLowerCase();
 
         boolean isUserExist = false;
-        for (int i = 0; i < user.size(); i++) {
-            String userName = user.get(i);
+        for (int i = 0; i < getUsersWithBank().size(); i++) {
+            User userName = getUsersWithBank().get(i);
             if (userName.equals(login)) {
                 isUserExist = true;
                 break;
             }
         }
+
 
 
         if (isUserExist)
@@ -55,7 +83,7 @@ public class Main {
                     if (answer.equals("yes")) {
                         System.out.println("Please enter your user name");
                         String createAccount = reader.readLine();
-                        user.add(createAccount);
+                        user.add((User) getUsersWithBank());
                         System.out.println("Thanks for creating account: " + createAccount);
                         isContinue = false;
                     } else if (answer.equals("no")) {
@@ -68,6 +96,7 @@ public class Main {
         }
     }
 
+
     private static List<User> getUsersWithBank() {
         List<User> user = new ArrayList<>();
 
@@ -78,7 +107,7 @@ public class Main {
 
         User user2= new User();
         user2.userName="Bartek";
-        user2.bankName = Arrays.asList("Mbnak");
+        user2.bankName = Arrays.asList("Mbank");
         user.add(user2);
 
         User user3= new User();
@@ -86,8 +115,15 @@ public class Main {
         user3.bankName = Arrays.asList("PKO", "Nest");
         user.add(user3);
 
+        User user4= new User();
+        user4.userName="Kamil";
+        user4.bankName = Arrays.asList("Mbank");
+        user.add(user4);
+
         return user;
     }
+
+
 }
 
 
